@@ -1,11 +1,11 @@
 # paymentNotifier
 
 
-## Implementation
-
-### Architecure
+## Design
 
 ![Sample googlsheet created to keep trach of product downloads by customers](images/architecture.jpg)
+
+## Implementation
 
 ### Package structure
 
