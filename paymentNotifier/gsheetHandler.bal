@@ -38,6 +38,14 @@ function setCustomerDetailsToGSheet(int noOfRaws, string[][] outValues) returns 
     }
 }
 
+function setOneCustomerDetailsToGSheet(int noOfRaws, string[][] outValues) returns (boolean) {
+    var spreadsheetRes = spreadsheetClient->setSheetValues(spreadsheetId, "member-details", "G"+<string>(noOfRaws+1), "G"+<string>(noOfRaws+1),outValues);
+    match spreadsheetRes {
+        boolean vals => return vals;
+        gsheets4:SpreadsheetError e => return false;
+    }
+}
+
 function getRawCount() returns (int){
     var response = spreadsheetClient->openSpreadsheetById(spreadsheetId);
     match response {
