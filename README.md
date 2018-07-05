@@ -1,4 +1,4 @@
-# paymentNotifier
+# Payment Notifier
 
 
 ## Design
