@@ -1,18 +1,18 @@
-// A system package containing protocol access constructs
-// Package objects referenced with 'http:' in code
+documentation {
+   This file contain all the business logic. It connects to the smsHandler and gsheetHandler to access services.
+}
+
 import ballerina/config;
 import ballerina/log;
 import ballerina/io;
 import ballerina/time;
 import ballerina/runtime;
 
-documentation {
-   A service endpoint represents a listener.
+documentation{
+   Variable declaration.
 }
-
 int currentMonth = 8;
 boolean notified = false;
-//string sheetName = "payment-members";
 
 function main(string... args) {
     worker checker{
@@ -21,10 +21,6 @@ function main(string... args) {
             runtime:sleep(3600*24*1000);
         }
     }
-}
-
-documentation{
-    Send notification to the customers.
 }
 
 function checkEveryThing(){
@@ -51,9 +47,10 @@ function checkEveryThing(){
 }
 
 function sendNotification(string[][] members) returns (boolean){
+   //Send notifications to the given set of members.
+   
     foreach member in members {
         string[] payload = [];
-        //var response = twilioService->post("/sendsms",{"sender":"+18503973832","receiver":"+94"+member[3],"message":"Hey "+member[1]+", Hope you are doing great at the gym. Seems like you have missed the payments for this month."});
         boolean status = sendASMS("+18503973832","+94"+member[3],"Hey "+member[1]+", Hope you are doing great at the gym. Seems like you have missed the payments for this month.");
         if(!status){
             return false;
@@ -63,6 +60,8 @@ function sendNotification(string[][] members) returns (boolean){
 }
 
 function checkForMonth() returns (boolean){
+   //Check whether a new month has arrived.
+   
     time:Time time = time:currentTime();
     if(time.month()!=currentMonth){
         currentMonth = time.month();
@@ -72,6 +71,8 @@ function checkForMonth() returns (boolean){
 }
 
 function checkForNotification() returns (boolean){
+   //Check whether the payment deadline has been passed and notification already sent.
+   
     time:Time time = time:currentTime();
     if(time.day()>3 && (!notified)){
         notified = true;
@@ -81,6 +82,8 @@ function checkForNotification() returns (boolean){
 }
 
 function resetPayment(int noOfRaws){
+   //Reset payment details in the new month.
+
     string[][] outValues = [];
     int i=0;
     while(i<noOfRaws){
@@ -91,6 +94,8 @@ function resetPayment(int noOfRaws){
 }
 
 function getUnpaidMembers(int rowCount) returns (string[][]){
+   //Return the details of the members who have not completed the payments.
+   
     string[][] response = getCustomerDetailsFromGSheet("A2","G"+<string>rowCount);
     string[][] members = [];
     int i = 0;
