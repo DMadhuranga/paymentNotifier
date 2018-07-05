@@ -1,9 +1,9 @@
+import ballerina/io;
+import wso2/twilio;
+
 documentation{
     This handler handles the communication between application and the twilio sms service.
 }
-
-import ballerina/io;
-import wso2/twilio;
 
 endpoint twilio:Client twilio {
     accountSId: config:getAsString("twilio.accountSId"),

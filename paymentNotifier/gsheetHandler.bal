@@ -1,8 +1,8 @@
+import wso2/gsheets4;
+
 documentation{
     This handler handles the communication between application and the google sheets service.
 }
-
-import wso2/gsheets4;
 
 string spreadsheetId = config:getAsString("gsheets.SPREADSHEET");
 

@@ -1,7 +1,3 @@
-documentation {
-   This file contain all the business logic. It connects to the smsHandler and gsheetHandler to access services.
-}
-
 import ballerina/config;
 import ballerina/log;
 import ballerina/io;
@@ -9,9 +5,10 @@ import ballerina/time;
 import ballerina/runtime;
 
 documentation{
-   Variable declaration.
+   This file contain all the business logic. It connects to the smsHandler and gsheetHandler to access services.
 }
-int currentMonth = 8;
+
+int currentMonth = 7;
 boolean notified = false;
 
 function main(string... args) {
