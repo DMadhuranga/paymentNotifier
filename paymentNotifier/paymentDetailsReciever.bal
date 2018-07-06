@@ -15,14 +15,14 @@ endpoint http:Listener listener {
     basePath: "/"
 }
 
-service<http:Service> hello bind listener {
+service<http:Service> memberPayment bind listener {
 
     @http:ResourceConfig {
         methods: ["POST"],
         path: "/memberPaid"
     }
 
-    sayHello (endpoint caller, http:Request request) {
+    handlePayments (endpoint caller, http:Request request) {
 
         http:Response response = new;
         string memberId = check request.getTextPayload();
