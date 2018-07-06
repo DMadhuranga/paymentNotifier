@@ -11,7 +11,7 @@ Google Spreadsheets service and Twilio SMS Service have been used for the projec
 ![Sample googlsheet created to keep trach of product downloads by customers](images/high_architecture.jpg)
 
 
-![Sample googlsheet created to keep trach of product downloads by customers](images/gsheet.jpg)
+![Sample googlsheet created to keep trach of product downloads by customers](images/gsheet.png)
 
 ## Implementation
 
