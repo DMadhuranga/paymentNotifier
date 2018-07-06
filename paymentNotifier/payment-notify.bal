@@ -21,6 +21,8 @@ function main(string... args) {
 }
 
 function checkEveryThing(){
+    // Check for any event
+    
     int rawCount = getRawCount();
     io:println("Count : "+<string>rawCount);
     if(checkForMonth()){
