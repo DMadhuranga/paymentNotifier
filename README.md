@@ -52,14 +52,13 @@ First download the project and navigate into the project folder. Then intialize 
 ```
 Then you need to add relevant credentials into the ballerina.conf file.
 
-    For twilio,
-    ```
+  For twilio,
+```
             accountSId = ""
             authToken = ""  
 ```
-
-    For Google sheet,
-    ```
+  For Google sheet,
+```
             ACCESS_TOKEN = ""
             CLIENT_ID = ""
             CLIENT_SECRET = ""
