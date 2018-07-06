@@ -37,6 +37,12 @@ paymentNotifier
 3. paymentDetailsReciever.bal : this service handles incoming requests that contain payment data and write to google sheet.
 4. smsHandler.bal : handles the communication between application and the twilio sms service.
 
+
+## Prerequisites
+
+   - [Ballerina Distribution](https://ballerinalang.org/docs/quick-tour/quick-tour/#install-ballerina)
+   - Credetials and tokens for both Google Sheets and Twilio APIs.
+   
 ## Running the application
 
 First download the project and navigate into the project folder. Then intialize the project using following command.
