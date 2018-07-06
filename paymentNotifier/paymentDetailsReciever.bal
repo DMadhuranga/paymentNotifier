@@ -3,6 +3,10 @@ import ballerina/log;
 import ballerina/io;
 import ballerina/http;
 
+documentation{
+   This service handles incoming requests that contain payment data and write to google sheet.
+}
+
 endpoint http:Listener listener {
     port:9092
 };
