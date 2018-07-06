@@ -39,6 +39,12 @@ paymentNotifier
 
 ## Running the application
 
+First download the project and navigate into the project folder. Then intialize the project using following command.
+```
+    ballerina init
+```
+Then you need to add relevant credentials into the ballerina.conf file.
+
 Running the server.
 ```
     ballerina run paymentNotifier
