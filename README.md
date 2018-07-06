@@ -8,8 +8,11 @@ Payment notifier notify members of an organization on their due payments. For an
 
 Google Spreadsheets service and Twilio SMS Service have been used for the project. Details of the members such as their mobile phone numbers will be saved in a google spreadsheet and it will be connected through wso2/gsheets4 package. SMS notifications will be sent through twilio sms service and it will be connected through wso2/twilio package.
 
+### Architecture
+
 ![Sample googlsheet created to keep trach of product downloads by customers](images/high_architecture.jpg)
 
+### Google sheet
 
 ![Sample googlsheet created to keep trach of product downloads by customers](images/gsheet.png)
 
