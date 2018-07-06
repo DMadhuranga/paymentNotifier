@@ -28,7 +28,13 @@ paymentNotifier
 
 ## Running the application
 
+Running the server.
 ```
     ballerina run paymentNotifier
-   
+```
+
+Sending payment details to the server.
+
+```
+    curl -d "member_id" -X POST localhost:9092/memberPaid
 ```
