@@ -43,6 +43,7 @@ paymentNotifier
    - [Ballerina Distribution](https://ballerinalang.org/docs/quick-tour/quick-tour/#install-ballerina)
    - Credetials and tokens for both Google Sheets and Twilio APIs.
    
+   
 ## Running the application
 
 First download the project and navigate into the project folder. Then intialize the project using following command.
@@ -50,6 +51,23 @@ First download the project and navigate into the project folder. Then intialize 
     ballerina init
 ```
 Then you need to add relevant credentials into the ballerina.conf file.
+
+    For twilio,
+    ```
+            accountSId = ""
+            authToken = ""  
+```
+
+    For Google sheet,
+    ```
+            ACCESS_TOKEN = ""
+            CLIENT_ID = ""
+            CLIENT_SECRET = ""
+            REFRESH_TOKEN = ""
+            SPREADSHEET = ""
+```
+
+
 
 Running the server.
 ```
