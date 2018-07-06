@@ -32,6 +32,11 @@ paymentNotifier
   └── tests    
 ```
 
+1. gsheetHandler.bal : handles the communication between application and the google sheets service.
+2. payment-notify.bal : contain all the business logic. It connects to the smsHandler and gsheetHandler to access services.
+3. paymentDetailsReciever.bal : this service handles incoming requests that contain payment data and write to google sheet.
+4. smsHandler.bal : handles the communication between application and the twilio sms service.
+
 ## Running the application
 
 Running the server.
