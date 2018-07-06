@@ -46,18 +46,18 @@ paymentNotifier
    
 ## Running the application
 
-First download the project and navigate into the project folder. Then intialize the project using following command.
+1. First download the project and navigate into the project folder. Then intialize the project using following command.
 ```
     ballerina init
 ```
-Then you need to add relevant credentials into the ballerina.conf file.
+2. Then you need to add relevant credentials into the ballerina.conf file.
 
-  For twilio,
+   - For twilio,
 ```
             accountSId = ""
             authToken = ""  
 ```
-  For Google sheet,
+   - For Google sheet,
 ```
             ACCESS_TOKEN = ""
             CLIENT_ID = ""
@@ -68,12 +68,12 @@ Then you need to add relevant credentials into the ballerina.conf file.
 
 
 
-Running the server.
+3. Running the server.
 ```
     ballerina run paymentNotifier
 ```
 
-Sending payment details to the server.
+4. Sending payment details to the server.
 
 ```
     curl -d "member_id" -X POST localhost:9092/memberPaid
