@@ -52,12 +52,12 @@ paymentNotifier
 ```
 2. Then you need to add relevant credentials into the ballerina.conf file.
 
-   - For twilio,
+   For twilio,
 ```
             accountSId = ""
             authToken = ""  
 ```
-   - For Google sheet,
+   For Google sheet,
 ```
             ACCESS_TOKEN = ""
             CLIENT_ID = ""
