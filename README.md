@@ -20,3 +20,10 @@ paymentNotifier
       └── smsHandler.bal
   └── tests    
 ```
+
+## Running the application
+
+```
+    ballerina run paymentNotifier
+   
+```
