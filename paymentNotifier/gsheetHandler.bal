@@ -18,6 +18,8 @@ endpoint gsheets4:Client spreadsheetClient {
 };
 
 function getCustomerDetailsFromGSheet(string leftCell, string rightCell) returns (string[][]) {
+    // Return the data of requested cells of the google sheet
+    
     string[][] values;
     var spreadsheetRes =  spreadsheetClient->getSheetValues(spreadsheetId, "member-details", leftCell, rightCell);
     match spreadsheetRes {
@@ -31,6 +33,8 @@ function getCustomerDetailsFromGSheet(string leftCell, string rightCell) returns
 }
 
 function setCustomerDetailsToGSheet(int noOfRaws, string[][] outValues) returns (boolean) {
+    // Write given data into the cells in payment_done column in the requested raws
+    
     var spreadsheetRes = spreadsheetClient->setSheetValues(spreadsheetId, "member-details", "G2", "G"+<string>(noOfRaws+1),outValues);
     match spreadsheetRes {
         boolean vals => return vals;
@@ -39,6 +43,8 @@ function setCustomerDetailsToGSheet(int noOfRaws, string[][] outValues) returns 
 }
 
 function setOneCustomerDetailsToGSheet(int noOfRaws, string[][] outValues) returns (boolean) {
+    // Write given data into the cell in payment_done column and requested raw
+    
     var spreadsheetRes = spreadsheetClient->setSheetValues(spreadsheetId, "member-details", "G"+<string>(noOfRaws+1), "G"+<string>(noOfRaws+1),outValues);
     match spreadsheetRes {
         boolean vals => return vals;
@@ -47,6 +53,8 @@ function setOneCustomerDetailsToGSheet(int noOfRaws, string[][] outValues) retur
 }
 
 function getRawCount() returns (int){
+    // Return the number of raws available in the google sheet
+    
     var response = spreadsheetClient->openSpreadsheetById(spreadsheetId);
     match response {
         gsheets4:Spreadsheet spreadsheetRes => return spreadsheetRes.sheets[0].properties.gridProperties.rowCount;
